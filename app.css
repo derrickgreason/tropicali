@@ -7,7 +7,7 @@ sass --watch css/app.scss:app.css
   font-family: "Jost";
   src: url(fonts/jost-book.woff2), url(fonts/jost-book.woff); }
 body {
-  background-color: red;
+  background-color: #ca774a;
   color: #ffffff;
   font-family: "Jost";
   font-size: 24px;
