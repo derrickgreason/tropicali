@@ -1,0 +1,53 @@
+/*to run sass in the command line as it is used here,
+use the command: 
+sass --watch css/app.scss:app.css   
+(that is sass --watch inputfile.scss:outputfile.css */
+
+@import "css/reset.css";
+@import "typography";
+
+$primary-color: red;
+$body-font: "Jost";
+$body-size: 24px;
+$mq-large: 800px;
+$mq-medium: 600px;
+
+
+@mixin drop-shadow($color) {
+    box-shadow: 0 0 10px $color;
+}
+
+@mixin mq($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+
+body {
+    background-color: $primary-color;
+    color: #ffffff;
+    font-family: $body-font;
+    font-size: $body-size;
+    line-height: 1.5;
+
+    @include mq($mq-large) {
+        background-color: yellow;
+    }
+
+    @include mq($mq-medium) {
+        background-color: green;
+    }
+}
+
+section {
+     background-color: #ffffff;
+     color: $primary-color;
+     @include drop-shadow(yellow);
+
+    p {
+        margin: 24px 0 0 0;
+        @include drop-shadow(blue);
+    }
+
+}
